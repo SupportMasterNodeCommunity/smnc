@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=SupportMasterNodeCommunity
+Comment=SupportMasterNodeCommunity P2P Cryptocurrency
+Comment[fr]=SupportMasterNodeCommunity, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=SupportMasterNodeCommunity, eşten eşe kriptografik sanal para birimi
+Exec=smnc-qt %u
+Terminal=false
+Type=Application
+Icon=smnc128
+MimeType=x-scheme-handler/smnc;
+Categories=Office;Finance;

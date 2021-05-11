@@ -1,0 +1,26 @@
+[Unit]
+Description=SupportMasterNodeCommunity's distributed currency daemon
+After=network.target
+
+[Service]
+User=smnc
+Group=smnc
+
+Type=forking
+PIDFile=/var/lib/smncd/smncd.pid
+
+ExecStart=/usr/bin/smncd -daemon -pid=/var/lib/smncd/smncd.pid \
+          -conf=/etc/smnc/smnc.conf -datadir=/var/lib/smncd
+
+ExecStop=-/usr/bin/smnc-cli -conf=/etc/smnc/smnc.conf \
+         -datadir=/var/lib/smncd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
